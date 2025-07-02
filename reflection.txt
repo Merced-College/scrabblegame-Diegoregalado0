@@ -1,0 +1,12 @@
+After playing around with the code and various trial and error attempts, 
+I can say that this program was a fun, interesting process and a learning experience.
+
+At first, I was having a bit of trouble finding where to start, as usual.
+I then briefed OpenAI's ChatGPT 4o with the main objective of the program with the context and details.
+I received a response with some basic frameworks and a solid starting point.
+
+Then I began making my classes, constructors and algorithms...
+
+I had mostly no issues on that part, aside from some syntax mistakes. 
+
+Where I had the most issues were with the 
