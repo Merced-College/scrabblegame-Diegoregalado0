@@ -1,6 +1,7 @@
 //Diego Regalado
 // CPSC-39
 // 7-1-2025
+// fixed type on assigment- collins file
 
 //imports 
 
@@ -18,7 +19,8 @@ public class scrabbleGame{
         Collections.sort(wordsList);
 
         // generation
-        char[] letters = generateRandomLetters(4);
+        String pool = buildLetterPool();                          // <-- NEW
+        char[] letters = generateRandomLettersFromPool(4, pool);  // <-- CHANGED
         System.out.println("Your letters are: " + Arrays.toString(letters));
 
         // input
@@ -41,7 +43,6 @@ public class scrabbleGame{
         }
     }
 
-   
     private static void loadWordsFromFile(String filename) {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
@@ -53,15 +54,24 @@ public class scrabbleGame{
         }
     }
 
-    private static char[] generateRandomLetters(int n) {
+    // NEW METHOD: builds a string containing all letters in all words
+    private static String buildLetterPool() {
+        StringBuilder pool = new StringBuilder();
+        for (Words w : wordsList) {
+            pool.append(w.getText());
+        }
+        return pool.toString();
+    }
+
+    // NEW METHOD: picks random letters from the pool string
+    private static char[] generateRandomLettersFromPool(int n, String pool) {
         Random rand = new Random();
         char[] letters = new char[n];
         for (int i = 0; i < n; i++) {
-            letters[i] = (char) ('a' + rand.nextInt(26));
+            letters[i] = pool.charAt(rand.nextInt(pool.length()));
         }
         return letters;
     }
-
 
     private static boolean isWordFromLetters(String word, char[] letters) {
         List<Character> available = new ArrayList<>();
