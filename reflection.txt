@@ -1,3 +1,8 @@
+Diego Regalado
+CPSC-39
+7-1-2025
+
+
 After playing around with the code and various trial and error attempts, 
 I can say that this program was a fun, interesting process and a learning experience.
 
@@ -9,4 +14,15 @@ Then I began making my classes, constructors and algorithms...
 
 I had mostly no issues on that part, aside from some syntax mistakes. 
 
-Where I had the most issues were with the 
+Where I had the most issues were with the testing of the file, I added a ton of words to the list,
+but somehow I could never land on the right combination.
+GenerateRandomLetters() chose random letters from A–Z, which often produced combinations like [q, x, z, j]
+Which had no valid words consistenly.
+
+So I created a function that builds a pool of letters only from actual words in the Collins dictionary file.
+
+The way it worked, was instea of generating random words A-Z, it would pull words from the collins file.
+
+Overall although slightly stresfull, I had fun learning the implemtation of ArrayLists and algoritms in practice.
+
+-Diego Regalado
