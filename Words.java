@@ -4,19 +4,19 @@
 
 //defines Words class and uses comparable
 
-public class Words implements comparable<Words> {
+public class Words implements Comparable<Words> {
     private String text;
 
-    \\constructor
+    // constructor
 
-    public Words(string text) {
+    public Words(String text) {
         this.text = text.toLowerCase();
     }
     // getter method
     public String getText(){
         return text;
     }
-    @override 
+    @Override 
     public int compareTo(Words other){
         return this.text.compareTo(other.text);
     }

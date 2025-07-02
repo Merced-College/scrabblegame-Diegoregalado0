@@ -4,18 +4,18 @@
 
 //imports 
 
-import java.io*; //input
-import java.util* //arrayLists and other utiltiies
+import java.io.*; //input
+import java.util.*; //arrayLists and other utiltiies
 
-//define scrabble class and arrayList
+// define scrabble class and arrayList
 public class scrabbleGame{
 
-    private static arrayLists<Words> wordList = new arrayLists<>();
+    private static ArrayList<Words> wordsList = new ArrayList<>();
 
     //main function
-    public static void main
-    loadWordsFromFile("CollinsScrabbleWords_2019.txt");
-        Collections.sort(wordList);
+    public static void main(String[] args){
+        loadWordsFromFile("CollinsScrabbleWords_2019.txt");
+        Collections.sort(wordsList);
 
         // generation
         char[] letters = generateRandomLetters(4);
@@ -26,13 +26,13 @@ public class scrabbleGame{
         System.out.print("Enter a word using those letters: ");
         String userInput = scanner.nextLine().toLowerCase();
 
-        //validation
+        // validation
         if (!isWordFromLetters(userInput, letters)) {
             System.out.println("Invalid word: you used letters that were not given.");
             return;
         }
 
-        //Binary search 
+        // binary search 
         boolean valid = binarySearch(userInput);
         if (valid) {
             System.out.println("valid word");
@@ -46,7 +46,7 @@ public class scrabbleGame{
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
             while ((line = br.readLine()) != null) {
-                wordList.add(new Word(line.trim()));
+                wordsList.add(new Words(line.trim()));
             }
         } catch (IOException e) {
             System.out.println("Error reading word list: " + e.getMessage());
@@ -78,11 +78,11 @@ public class scrabbleGame{
     // Binary search 
     private static boolean binarySearch(String word) {
         int low = 0;
-        int high = wordList.size() - 1;
+        int high = wordsList.size() - 1;
 
         while (low <= high) {
             int mid = (low + high) / 2;
-            Word midWord = wordList.get(mid);
+            Words midWord = wordsList.get(mid);
             int cmp = word.compareTo(midWord.getText());
 
             if (cmp == 0) return true;
