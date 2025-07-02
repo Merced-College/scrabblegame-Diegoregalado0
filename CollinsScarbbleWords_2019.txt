@@ -1,0 +1,11 @@
+cat
+app
+dog
+man
+ili
+kec
+omp
+ute
+rsc
+ien
+cee
