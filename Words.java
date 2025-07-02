@@ -1,3 +1,7 @@
+//Diego Regalado
+// CPSC-39
+// 7-1-2025
+
 //defines Words class and uses comparable
 
 public class Words implements comparable<Words> {
